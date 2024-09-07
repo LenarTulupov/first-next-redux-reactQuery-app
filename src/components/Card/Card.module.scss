@@ -1,0 +1,7 @@
+.prices {
+  display: flex;
+  justify-content: space-between;
+  &__old {
+    text-decoration: line-through;
+  }
+}
