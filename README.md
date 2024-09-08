@@ -1,5 +1,5 @@
 Две команды для запуска проекта:
-npm install
+npm install,
 npm run dev
 
 Все!
