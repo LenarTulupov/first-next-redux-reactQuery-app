@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { setProducts } from '@/store/products/productsSlice';
 import styles from './Products.module.scss'
 import Card from '@/components/Card/Card';
+// import { useQuery } from '@tanstack/react-query';
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -20,9 +21,10 @@ export default function Products() {
     fetchProducts();
   }, [dispatch]);
 
+
+  // const { data, error, isLoading } = useQuery(['products'], )
   return (
     <div className={styles.products}>
-      {/* <img src="https://cdn-eahjn.nitrocdn.com/ChEvwayTHZmZJUAdsUNMLXuXZdBprFoQ/assets/images/optimized/rev-b4bc015/www.spinxdigital.com/app/uploads/2023/03/spinx-logo-white.png" alt="" /> */}
       {products.map((product) => {
         const imageUrl =
           product.product_colors[0].product_color_images[0].image_path;

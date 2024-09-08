@@ -1,7 +1,20 @@
+.card {
+  min-height: 500px;
+  &__product-info {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    padding: 10px;
+  }
+}
+
 .prices {
   display: flex;
   justify-content: space-between;
   &__old {
     text-decoration: line-through;
   }
+}
+
+.card__button {
+  width: 100%;
 }
