@@ -1,9 +1,15 @@
 .card {
+  position: relative;
   min-height: 500px;
+  &__favorite-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
   &__product-info {
     display: grid;
     grid-template-rows: repeat(4, auto);
-    padding: 10px;
+    // padding: 10px;
   }
 }
 

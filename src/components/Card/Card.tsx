@@ -1,8 +1,11 @@
 import { ICard } from "@/types/card.interface";
-import Image from "next/image";
-import styles from './Card.module.scss'
 import Sizes from "../Sizes/Sizes";
 import Button from "../ui/Button/Button";
+import Title from "../ui/Title/Title";
+import FavoriteButton from "../ui/FavoriteButton/FavoriteButton";
+import CardImage from "../ui/CardImage/CardImage";
+import Price from "../ui/Price/Price";
+import styles from './Card.module.scss'
 
 export default function Card({
   // id,
@@ -14,21 +17,13 @@ export default function Card({
   price_old }: ICard) {
   return (
     <div className={styles.card}>
-      <Image
-        src={src}
-        alt={alt}
-        width={300}
-        height={0}
-        layout='intrinsic'
-        priority
-      />
+      <CardImage src={src} alt={alt} />
+      <FavoriteButton className={styles['card__favorite-button']} />
       <div className={styles['card__product-info']}>
-        <div>
-          {title}
-        </div>
+        <Title>{title}</Title>
         <div className={styles.prices}>
-          <div className={styles.prices__old}>{price_old}</div>
-          <div>{price_new}</div>
+          <Price className={styles.prices__old} price={price_old} />
+          <Price price={price_new} />
         </div>
         <Sizes sizes={sizes} />
         <Button
